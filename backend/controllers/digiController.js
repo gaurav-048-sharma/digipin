@@ -18,9 +18,8 @@ const encodeDigiPin = async (req, res) => {
       return res.status(400).json({ error: 'Invalid latitude or longitude' });
     }
 const digipin = getDigiPin(parsedLat, parsedLng, { includeHyphens });
-console.log('Generated DigiPin:', digipin);
-const formattedDigiPin = includeHyphens ? digipin : `${digipin.slice(0, 4)}-${digipin.slice(3, 7)}-${digipin.slice(6)}`;
-console.log('Formatted DigiPin for DB:', formattedDigiPin);
+// const formattedDigiPin = includeHyphens ? digipin : `${digipin.slice(0, 4)}-${digipin.slice(3, 7)}-${digipin.slice(6)}`;
+// console.log('Formatted DigiPin for DB:', formattedDigiPin);
 // await DigiPin.create({ digipin: formattedDigiPin, latitude: parsedLat, longitude: parsedLng });
     
     res.status(200).json({ digipin });

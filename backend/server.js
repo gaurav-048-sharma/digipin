@@ -6,14 +6,13 @@ const morgan = require('morgan');
 const swaggerUi = require('swagger-ui-express');
 const yaml = require('yamljs');
 const path = require('path');
-const dbConnect = require('./config/dbConnect');
 const digipinRoutes = require('./routes/digipinRoute');
 
 const app = express();
 const PORT = process.env.PORT;
 
 // Connect to MongoDB
-dbConnect();
+
 
 // Middleware
 app.use(express.json());
