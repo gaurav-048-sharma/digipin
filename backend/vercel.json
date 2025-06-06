@@ -1,7 +1,7 @@
 {
   "version": 2,
   "functions": {
-    "server.js": {
+    "api/server.js": {
       "memory": 1024,
       "maxDuration": 10
     }
@@ -12,15 +12,15 @@
   "rewrites": [
     {
       "source": "/api/digipin/(.*)",
-      "destination": "server.js"
+      "destination": "/api/server.js"
     },
     {
       "source": "/api-docs",
-      "destination": "server.js"
+      "destination": "/api/server.js"
     },
     {
       "source": "/(.*)",
-      "destination": "server.js"
+      "destination": "/api/server.js"
     }
   ]
 }
