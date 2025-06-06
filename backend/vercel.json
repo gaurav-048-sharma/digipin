@@ -12,15 +12,15 @@
   "rewrites": [
     {
       "source": "/api/digipin/(.*)",
-      "destination": "/server.js"
+      "destination": "server.js"
     },
     {
       "source": "/api-docs",
-      "destination": "/server.js"
+      "destination": "server.js"
     },
     {
       "source": "/(.*)",
-      "destination": "/server.js"
+      "destination": "server.js"
     }
   ]
 }
