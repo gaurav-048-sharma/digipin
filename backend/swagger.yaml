@@ -1,0 +1,181 @@
+---
+openapi: 3.0.3
+info:
+  title: DigiPin API
+  description: API for encoding and decoding DigiPin codes for geographic coordinates in India
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000/api
+paths:
+  /digipin/encode:
+    get:
+      summary: Encode coordinates into a DigiPin code (GET)
+      parameters:
+        - in: query
+          name: latitude
+          schema:
+            type: number
+            minimum: 2.5
+            maximum: 38.5
+          required: true
+          description: Latitude of the location
+        - in: query
+          name: longitude
+          schema:
+            type: number
+            minimum: 63.5
+            maximum: 99.5
+          required: true
+          description: Longitude of the location
+        - in: query
+          name: includeHyphens
+          schema:
+            type: boolean
+            default: true
+          description: Include hyphens in the DigiPin output
+      responses:
+        '200':
+          description: Successfully encoded DigiPin
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  digipin:
+                    type: string
+                    example: FCK-3MP-56LT
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Invalid latitude or longitude
+    post:
+      summary: Encode coordinates into a DigiPin code (POST)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                latitude:
+                  type: number
+                  minimum: 2.5
+                  maximum: 38.5
+                longitude:
+                  type: number
+                  minimum: 63.5
+                  maximum: 99.5
+                includeHyphens:
+                  type: boolean
+                  default: true
+              required:
+                - latitude
+                - longitude
+      responses:
+        '200':
+          description: Successfully encoded DigiPin
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  digipin:
+                    type: string
+                    example: FCK-3MP-56LT
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Invalid latitude or longitude
+  /digipin/decode:
+    get:
+      summary: Decode a DigiPin code into coordinates (GET)
+      parameters:
+        - in: query
+          name: digipin
+          schema:
+            type: string
+            pattern: ^[FC982J327K56LMPT]{10}$|^[FC982J327K56LMPT]{3}-[FC982J327K56LMPT]{3}-[FC982J327K56LMPT]{4}$
+          required: true
+          description: DigiPin code to decode
+      responses:
+        '200':
+          description: Successfully decoded coordinates
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  latitude:
+                    type: string
+                    example: "28.600000"
+                  longitude:
+                    type: string
+                    example: "77.200000"
+                  fromDatabase:
+                    type: boolean
+                    example: false
+        '400':
+          description: Invalid DigiPin
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Invalid DigiPin format
+    post:
+      summary: Decode a DigiPin code into coordinates (POST)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                digipin:
+                  type: string
+                  pattern: ^[FC982J327K56LMPT]{10}$|^[FC982J327K56LMPT]{3}-[FC982J327K56LMPT]{3}-[FC982J327K56LMPT]{4}$
+              required:
+                - digipin
+      responses:
+        '200':
+          description: Successfully decoded coordinates
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  latitude:
+                    type: string
+                    example: "28.600000"
+                  longitude:
+                    type: string
+                    example: "77.200000"
+                  fromDatabase:
+                    type: boolean
+                    example: false
+        '400':
+          description: Invalid DigiPin
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Invalid DigiPin format
+components:
+  schemas: {}
