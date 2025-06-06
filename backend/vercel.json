@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "functions": {
+    "server.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  },
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "rewrites": [
+    {
+      "source": "/api/digipin/(.*)",
+      "destination": "/server.js"
+    },
+    {
+      "source": "/api-docs",
+      "destination": "/server.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/server.js"
+    }
+  ]
+}
