@@ -7,7 +7,7 @@ const yaml = require('yamljs');
 const path = require('path');
 const digipinRoutes = require('./routes/digipinRoute.js');
 const app = express();
-const serverless = require('serverless-http');
+// const serverless = require('serverless-http');
 const PORT = process.env.PORT;
 
 // Connect to MongoDB
@@ -41,4 +41,4 @@ app.listen(PORT, () => {
   console.log(`index is running on port http://localhost:${PORT}/api/digipin`);
 });
 
-module.exports = serverless(app);
+// module.exports = serverless(app);
