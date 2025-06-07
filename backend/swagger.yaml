@@ -4,7 +4,7 @@ info:
   title: DigiPin API
   description: API for encoding and decoding DigiPin codes for geographic coordinates in India
   version: 1.0.0
-servers:
+indexs:
   - url: http://localhost:3000/api
 paths:
   /digipin/encode:

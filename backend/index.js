@@ -6,9 +6,11 @@ const morgan = require('morgan');
 const swaggerUi = require('swagger-ui-express');
 const yaml = require('yamljs');
 const path = require('path');
-const digipinRoutes = require('./routes/digipinRoute');
+const digipinRoutes = require('./routes/digipinRoute.js');
+
 
 const app = express();
+const serverless = require('serverless-http');
 const PORT = process.env.PORT;
 
 // Connect to MongoDB
@@ -35,10 +37,11 @@ app.use('/api/digipin', digipinRoutes);
 // Error Handling Middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({ error: 'Internal Server Error' });
+  res.status(500).json({ error: 'Internal index Error' });
 });
 
-// Start Server
 app.listen(PORT, () => {
-  console.log(`Server is running on port http://localhost:${PORT}/api/digipin`);
+  console.log(`index is running on port http://localhost:${PORT}/api/digipin`);
 });
+
+module.exports = serverless(app);

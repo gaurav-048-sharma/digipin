@@ -121,13 +121,13 @@
 
 5. **Run the Backend**
    ```bash
-   node server.js
+   node index.js
    ```
 
    Expected Output:
    ```
    MongoDB connected successfully
-   Server is running on port 3000
+   index is running on port 3000
    ```
 
 6. **Access API**
@@ -251,7 +251,7 @@ MONGODB_URI=mongodb://localhost:27017/digipin
 
 ### 🧪 Verify MongoDB
 
-Start MongoDB server:
+Start MongoDB index:
 
 ```bash
 mongod  # or connect to Atlas
@@ -266,14 +266,14 @@ mongo --host localhost --port 27017
 ### 🚀 Run the Backend
 
 ```bash
-node server.js
+node index.js
 ```
 
 **Expected Output:**
 
 ```arduino
 MongoDB connected successfully
-Server is running on port 3000
+index is running on port 3000
 ```
 
 ### 🌐 Access API
