@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
@@ -8,7 +8,7 @@ const path = require('path');
 const digipinRoutes = require('./routes/digipinRoute.js');
 const app = express();
 const serverless = require('serverless-http');
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 // Connect to MongoDB
 
@@ -37,8 +37,8 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal index Error' });
 });
 
-// app.listen(PORT, () => {
-//   console.log(`index is running on port http://localhost:${PORT}/api/digipin`);
-// });
+app.listen(PORT, () => {
+  console.log(`index is running on port http://localhost:${PORT}/api/digipin`);
+});
 
 module.exports = serverless(app);
