@@ -93,7 +93,7 @@
 
 2. **Install Dependencies**
    ```bash
-   npm install express cors morgan dotenv mongoose swagger-ui-express yaml yamljs
+   npm install express cors morgan dotenv swagger-ui-express yaml yamljs
    ```
 
    > Ensure `digipin.js` is in the backend directory and referenced in `digipinController.js`.
@@ -111,8 +111,7 @@
 
    Expected Output:
    ```
-   MongoDB connected successfully
-   index is running on port 3000
+   index is running on port http://localhost:3000/api/digipin
    ```
 
 5. **Access API**
