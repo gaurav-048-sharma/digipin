@@ -1,7 +1,7 @@
 {
   "version": 2,
   "functions": {
-    "backend/index.js": {
+    "index.js": {
       "memory": 1024,
       "maxDuration": 30
     }
