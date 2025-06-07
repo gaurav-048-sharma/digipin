@@ -190,7 +190,7 @@ function Map() {
               <div className="flex gap-4">
                 <Input
                   type="text"
-                  placeholder="Enter DigiPin (e.g., FCK-3MP-56LT)"
+                  placeholder="Enter DigiPin (e.g., 3T2-JTF-7KLF)"
                   value={digiPin}
                   onChange={(e) => setDigiPin(e.target.value)}
                   className="border-gray-300 focus:border-blue-500"
