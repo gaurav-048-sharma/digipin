@@ -6,8 +6,6 @@ const swaggerUi = require('swagger-ui-express');
 const yaml = require('yamljs');
 const path = require('path');
 const digipinRoutes = require('./routes/digipinRoute.js');
-
-
 const app = express();
 const serverless = require('serverless-http');
 const PORT = 3000;
@@ -39,8 +37,8 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal index Error' });
 });
 
-app.listen(PORT, () => {
-  console.log(`index is running on port http://localhost:${PORT}/api/digipin`);
-});
+// app.listen(PORT, () => {
+//   console.log(`index is running on port http://localhost:${PORT}/api/digipin`);
+// });
 
 module.exports = serverless(app);
