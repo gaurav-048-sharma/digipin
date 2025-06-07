@@ -1,5 +1,4 @@
 
-require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
@@ -11,7 +10,7 @@ const digipinRoutes = require('./routes/digipinRoute.js');
 
 const app = express();
 const serverless = require('serverless-http');
-const PORT = process.env.PORT;
+const PORT = 3000;
 
 // Connect to MongoDB
 
