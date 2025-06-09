@@ -8,7 +8,7 @@ const path = require('path');
 const digipinRoutes = require('./routes/digipinRoute.js');
 const app = express();
 
-const PORT = process.env.PORT;
+//const PORT = process.env.PORT;
 
 // Connect to MongoDB
 
@@ -37,7 +37,9 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal index Error' });
 });
 
-app.listen(PORT, () => {
-  console.log(`index is running on port http://localhost:${PORT}/api/digipin`);
-});
+// app.listen(PORT, () => {
+//   console.log(`index is running on port http://localhost:${PORT}/api/digipin`);
+// });
+
+module.exports = app; // Export the app for testing or serverless deployment
 
