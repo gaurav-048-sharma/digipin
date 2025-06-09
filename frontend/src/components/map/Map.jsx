@@ -73,11 +73,12 @@ function Map() {
       return;
     }
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/encode`, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/digipin/encode`, {
         latitude: position.lat,
         longitude: position.lng,
         includeHyphens,
       });
+      console.log("API URL:", import.meta.env.VITE_API_URL);
       setDigiPin(response.data.digipin);
       setError('');
     } catch (err) {
