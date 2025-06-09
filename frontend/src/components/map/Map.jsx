@@ -92,7 +92,7 @@ function Map() {
       return;
     }
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/decode`, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/digipin/decode`, {
         digipin: digiPin,
       });
       setDecodedCoords(response.data);
