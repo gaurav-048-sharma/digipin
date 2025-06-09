@@ -73,7 +73,7 @@ function Map() {
       return;
     }
     try {
-      const response = await axios.post(`https://digipin-msu7-git-main-gaurav-sharmas-projects-97aa0168.vercel.app/api/digipin/encode`, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/digipin/encode`, {
         latitude: position.lat,
         longitude: position.lng,
         includeHyphens,
@@ -92,7 +92,7 @@ function Map() {
       return;
     }
     try {
-      const response = await axios.post(`https://digipin-msu7-git-main-gaurav-sharmas-projects-97aa0168.vercel.app/api/digipin/decode`, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/digipin/decode`, {
         digipin: digiPin,
       });
       setDecodedCoords(response.data);

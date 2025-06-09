@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://digipin-hfir-git-main-gaurav-sharmas-projects-97aa0168.vercel.app'
+    process.env.BASE_URL
   ],
   methods: ['GET', 'POST', 'OPTIONS'],
   credentials: true,
