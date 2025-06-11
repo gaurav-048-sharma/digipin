@@ -45,8 +45,8 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal index Error' });
 });
 
-// app.listen(PORT, () => {
-//   console.log(`index is running on port http://localhost:${PORT}/api/digipin`);
+// app.listen(8080, () => {
+//   console.log(`index is running on port http://localhost:8080/api/digipin`);
 // });
 
 module.exports = app; // Export the app for testing or serverless deployment
