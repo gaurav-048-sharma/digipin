@@ -236,7 +236,7 @@ function Map() {
                     id="latitude"
                     type="text"
                     placeholder="Enter latitude (2.5 to 38.5)"
-                    value={latInput}
+                    // value={latInput}
                     onChange={(e) => setLatInput(e.target.value)}
                     className="border-gray-300 focus:border-blue-500"
                   />
@@ -247,7 +247,7 @@ function Map() {
                     id="longitude"
                     type="text"
                     placeholder="Enter longitude (63.5 to 99.5)"
-                    value={lngInput}
+                    // value={lngInput}
                     onChange={(e) => setLngInput(e.target.value)}
                     className="border-gray-300 focus:border-blue-500"
                   />
